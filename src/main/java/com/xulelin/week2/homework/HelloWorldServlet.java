@@ -12,8 +12,8 @@ public class HelloWorldServlet extends HttpServlet {
     public void doGet(HttpServletRequest request, HttpServletResponse response)
             throws IOException {
         PrintWriter writer = response.getWriter();
-        writer.println("Name : Yin Xingyu");
-        writer.println("ID : 2019211001000903");
+        writer.println("Name : Xu Lelin");
+        writer.println("ID : 2019211001000908");
         Date date = new Date();
         writer.println("Date and Time " + date.toString());
     }

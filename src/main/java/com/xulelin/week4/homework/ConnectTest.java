@@ -5,9 +5,9 @@ import java.sql.*;
 public class ConnectTest {
     public static void main(String[] args) {
         String driver = "com.microsoft.sqlserver.jdbc.SQLServerDriver";
-        String url = "jdbc:sqlserver://localhost:1433;databaseName=userdb";
+        String url = "jdbc:sqlserver://localhost:1433;database=userdb";
         String username = "sa";
-        String password = "admin123456";
+        String password = "admin1234567";
         try {
             Class.forName(driver);
             System.out.println("Loading driver succeeded!");

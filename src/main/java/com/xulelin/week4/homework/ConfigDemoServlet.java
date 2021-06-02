@@ -14,8 +14,8 @@ import java.sql.SQLException;
 @WebServlet(
         urlPatterns = {"/config"},
         initParams = {
-                @WebInitParam(name = "name", value = "Yin Xingyu"),
-                @WebInitParam(name = "studentId", value = "2019211001000903")
+                @WebInitParam(name = "name", value = "Xu Lelin"),
+                @WebInitParam(name = "studentId", value = "2019211001000908")
         }
 )
 public class ConfigDemoServlet extends HttpServlet {
