@@ -61,11 +61,11 @@
     </welcome-file-list>
 
     <filter>
-        <filter-name>YourNameFilter</filter-name>
+        <filter-name>XuLelinFilter</filter-name>
         <filter-class>com.lab2.XuLelinFilter</filter-class>
     </filter>
     <filter-mapping>
-        <filter-name>YourNameFilter</filter-name>
+        <filter-name>XuLelinFilter</filter-name>
         <url-pattern>/lab2/welcome.jsp</url-pattern>
     </filter-mapping>
     <filter>
