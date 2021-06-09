@@ -13,7 +13,7 @@
                             padding:0px;
                             margin:0px;" valign="bottom">
 
-            <img src="com.yinxingyu.week5.homework/logo.jpg" align="left">
+            <img src="com.xulelin.week5.homework/logo.jpg" align="left">
         </td>
     </tr>
     <tr>
@@ -40,7 +40,7 @@
         <td align="right">
             <br> <a href="#">Logout</a>
             <br><a href="#">My Cart</a><br/>
-            <a href="com.yinxingyu.week5.homework/register.jsp">Register Here</a>
+            <a href="com.xulelin.week5.homework/register.jsp">Register Here</a>
         </td>
     </tr>
 </table>
