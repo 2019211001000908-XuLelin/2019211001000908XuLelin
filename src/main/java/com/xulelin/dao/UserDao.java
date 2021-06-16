@@ -2,10 +2,8 @@ package com.xulelin.dao;
 
 import com.xulelin.model.User;
 
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.SQLException;
+import java.sql.*;
+import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.List;
 
@@ -22,11 +20,37 @@ public class UserDao implements IUserDao {
 
     @Override
     public int updateUser(Connection con, User user) throws SQLException {
+
+        // TODO 5.1 : write update sql where id=?
+        // TODO 5.2 : create prepared statement
+        // TODO 5.3 : executeQuery()
+        // TODO 5.4 : return int value
+
+        try {
+            Statement createDbStatement = con.createStatement();
+            SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy-MM-dd");
+            String sql = "update usertable set Username='" + user.getUsername() + "',Password='" + user.getPassword() + "',Email='" + user.getEmail() + "',Gender='" + user.getGender() + "',BirthDate='" + simpleDateFormat.format(user.getBirthDate()) + "' where id=" + user.getId();
+            createDbStatement.executeUpdate(sql);
+            System.out.println("update " + user.getId() + " success");
+            return 1;
+        } catch (Exception e) {
+            System.out.println(e);
+        }
         return 0;
     }
 
     @Override
     public User findById(Connection con, Integer id) throws SQLException {
+        try {
+            Statement createDbStatement = con.createStatement();
+            String dbRequire = "select * from usertable where id=" + id.toString();
+            ResultSet resultDb = createDbStatement.executeQuery(dbRequire);
+            while (resultDb.next()) {
+                return new User(resultDb.getInt("Id"), resultDb.getString("Username"), resultDb.getString("Password"), resultDb.getString("Email"), resultDb.getString("Gender"), resultDb.getDate("BirthDate"));
+            }
+        } catch (Exception e) {
+            System.out.println(e);
+        }
         return null;
     }
 

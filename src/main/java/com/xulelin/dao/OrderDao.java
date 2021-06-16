@@ -1,5 +1,4 @@
 package com.xulelin.dao;
-
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
@@ -121,7 +120,7 @@ public class OrderDao implements IOrderDao {
             while (rs.next()) {
                 Order o = new Order();
                 o.setOrderId(rs.getInt("OrderID"));
-                o.setCustomerId(rs.getInt("CutomerId"));
+                o.setCustomerId(rs.getInt("CustomerId"));
                 o.setPaymentId(rs.getInt("PaymentID"));
                 o.setOrderDate(rs.getTimestamp("OrderDate"));
                 o.setFirstName(rs.getString("FirstName"));
@@ -134,7 +133,7 @@ public class OrderDao implements IOrderDao {
                 o.setCountry(rs.getString("Country"));
                 o.setPhone(rs.getString("Phone"));
                 o.setNotes(rs.getString("Notes"));
-                o.setOrderTotal(rs.getDouble("Order Total"));
+                o.setOrderTotal(rs.getDouble("OrderTotal"));
 
                 orderList.add(o);
             }
@@ -150,7 +149,7 @@ public class OrderDao implements IOrderDao {
 
     @Override
     public List<Order> findByUserId(Connection con, Object CustomerID) {
-        return findByProperty(con, "CutomerId", CustomerID);
+        return findByProperty(con, "CustomerId", CustomerID);
     }
 
     @Override
@@ -205,7 +204,7 @@ public class OrderDao implements IOrderDao {
 
     @Override
     public List<Order> findByOrderTotal(Connection con, Object orderTotal) {
-        return findByProperty(con, "Order Total", orderTotal);
+        return findByProperty(con, "OrderTotal", orderTotal);
     }
 
     @Override
@@ -220,7 +219,7 @@ public class OrderDao implements IOrderDao {
             while (rs.next()) {
                 Order o = new Order();
                 o.setOrderId(rs.getInt("OrderID"));
-                o.setCustomerId(rs.getInt("CutomerId"));
+                o.setCustomerId(rs.getInt("CustomerId"));
                 o.setPaymentId(rs.getInt("PaymentID"));
                 o.setOrderDate(rs.getTimestamp("OrderDate"));
                 o.setFirstName(rs.getString("FirstName"));
@@ -233,7 +232,7 @@ public class OrderDao implements IOrderDao {
                 o.setCountry(rs.getString("Country"));
                 o.setPhone(rs.getString("Phone"));
                 o.setNotes(rs.getString("Notes"));
-                o.setOrderTotal(rs.getDouble("Order Total"));
+                o.setOrderTotal(rs.getDouble("OrderTotal"));
 
                 orderList.add(o);
             }
@@ -274,4 +273,4 @@ public class OrderDao implements IOrderDao {
         return itemList;
     }
 
-}
+}//end
